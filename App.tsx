@@ -7,8 +7,8 @@ import LoginScreen from './src/screens/LoginScreen';
 function App() {
   return (
     <PaperProvider>
-      {/* <LoginScreen/> */}
-      <TermsScreen />
+      <LoginScreen/>
+      {/* <TermsScreen /> */}
     </PaperProvider>
   );
 };
