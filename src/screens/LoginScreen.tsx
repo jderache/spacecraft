@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, SafeAreaView, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import React from 'react';
-import Header from './components/Header';
+import Header from '../components/Header';
 
 
 export default function LoginScreen() {

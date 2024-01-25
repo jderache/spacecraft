@@ -2,16 +2,15 @@ import React from "react";
 import { StyleSheet, StatusBar, View, Text, SafeAreaView, ScrollView, FlatList} from "react-native";
 import { Card, Button } from 'react-native-paper';
 
-import { default as data } from "../../api/data.json";
+import { default as data } from "~/../api/data.json";
 
 export const StarshipFeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-        <ScrollView>
           <View style={styles.container}>
             <View style={styles.headerContainer}>
-              <FlatList 
+              <FlatList style={{padding: 20}}
                 data={data.results}
                 renderItem={({item}) => (
                   <View className="mt-5">
@@ -30,7 +29,6 @@ export const StarshipFeedScreen = () => {
               />
             </View>
           </View>
-        </ScrollView>
     </SafeAreaView>
   );
 };
@@ -41,7 +39,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0, // only for Android to avoid status bar overlap
   },
   headerContainer: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 0,
     marginTop: 20,
   },
 });
@@ -52,34 +50,34 @@ export const useImage = (title: string) => {
   let source;
   switch (imageName) {
     case "cr90corvette":
-      source = require("../../assets/starships/CR90corvette.jpg");
+      source = require("~/../assets/starships/CR90corvette.jpg");
       break;
     case "stardestroyer":
-      source = require("../../assets/starships/stardestroyer.jpg");
+      source = require("~/../assets/starships/stardestroyer.jpg");
       break;
     case "sentinel-classlanding craft":
-      source = require("../../assets/starships/sentinel-classlandingcraft.jpg");
+      source = require("~/../assets/starships/sentinel-classlandingcraft.jpg");
       break;
     case "deathstar":
-      source = require("../../assets/starships/deathstar.jpg");
+      source = require("~/../assets/starships/deathstar.jpg");
       break;
     case "millenniumfalcon":
-      source = require("../../assets/starships/millenniumfalcon.jpg");
+      source = require("~/../assets/starships/millenniumfalcon.jpg");
       break;
     case "y-wing":
-      source = require("../../assets/starships/y-wing.jpg");
+      source = require("~/../assets/starships/y-wing.jpg");
       break;
     case "x-wing":
-      source = require("../../assets/starships/x-wing.jpg");
+      source = require("~/../assets/starships/x-wing.jpg");
       break;
     case "tieadvanced x1":
-      source = require("../../assets/starships/tieadvancedx1.jpg");
+      source = require("~/../assets/starships/tieadvancedx1.jpg");
       break;
     case "executor":
-      source = require("../../assets/starships/executor.jpg");
+      source = require("~/../assets/starships/executor.jpg");
       break;
     case "rebeltransport":
-      source = require("../../assets/starships/rebeltransport.jpg");
+      source = require("~/../assets/starships/rebeltransport.jpg");
       break;
   }
   return source;

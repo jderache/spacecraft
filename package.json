@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "babel-plugin-root-import": "^6.6.0",
     "expo": "~50.0.3",
     "expo-status-bar": "~1.11.1",
     "nativewind": "^2.0.11",
