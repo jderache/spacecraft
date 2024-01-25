@@ -3,12 +3,14 @@ import { Provider as PaperProvider } from 'react-native-paper';
 
 import TermsScreen from './src/screens/TermsScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import { StarshipFeedScreen } from './src/screens/StarshipFeedScreen';
 
 function App() {
   return (
     <PaperProvider>
-      <LoginScreen/>
+      {/* <LoginScreen/> */}
       {/* <TermsScreen /> */}
+      <StarshipFeedScreen />
     </PaperProvider>
   );
 };
