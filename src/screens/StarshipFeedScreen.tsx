@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, StatusBar, View, Text, SafeAreaView, ScrollView, FlatList} from "react-native";
+import { StyleSheet, StatusBar, View, Text, SafeAreaView, FlatList} from "react-native";
 import { Card, ActivityIndicator} from 'react-native-paper';
 import { useStarships } from '../hooks/useStarships';
 

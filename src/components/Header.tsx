@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Title } from 'react-native-paper';
+import { Title } from 'react-native-paper';
 
 
 const Header = ( {title}:{title:string} ) => (

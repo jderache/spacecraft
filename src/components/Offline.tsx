@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { View, Text } from "react-native";
 import { useIsConnected } from "react-native-offline";
 import { ActivityIndicator } from "react-native-paper";
 
