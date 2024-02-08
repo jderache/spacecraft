@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, View, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Text, TextInput, Button } from 'react-native-paper';
 import React from 'react';
 import Header from '../components/Header';
+import { Routes } from 'src/navigation/Routes';
 
 
-export default function LoginScreen() {
+
+export default function LoginScreen( {navigation}: {navigation: any}) {
   const [text, setText] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  function navigateToTerms() {
+    navigation.navigate(Routes.TERMS_SCREEN);
+  }
 
   //hide/show password
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
@@ -43,7 +50,10 @@ export default function LoginScreen() {
                     <Button className='mt-10 bg-violet-600' mode="contained" onPress={() => console.log('Pressed')}>
                       Login
                     </Button>
-                    <Text className='mt-5 text-gray-600'>by login you accept the Terms and conditions</Text>
+                    <TouchableOpacity onPress={navigateToTerms}>
+                      <Text className='mt-5 text-gray-600'>by login you accept the Terms and conditions</Text>
+                    </TouchableOpacity>
+                    
                   </View>
               </View>
           </TouchableWithoutFeedback>
