@@ -24,4 +24,7 @@ function App() {
 }
 
 // eslint-disable-next-line import/no-default-export
-export default App;
+// export default App;
+
+// return Storybook's UI
+export { default } from "./.storybook";
