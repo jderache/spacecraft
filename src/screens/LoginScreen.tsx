@@ -5,8 +5,8 @@ import { Text, TextInput, Button } from 'react-native-paper';
 import React from 'react';
 import Header from '../components/Header';
 import { Routes } from 'src/navigation/Routes';
-
-
+import { useAuthContext } from 'src/contexts/AuthContext';
+import { useEffect } from 'react';
 
 export default function LoginScreen( {navigation}: {navigation: any}) {
   const [text, setText] = React.useState("");
@@ -15,6 +15,12 @@ export default function LoginScreen( {navigation}: {navigation: any}) {
   function navigateToTerms() {
     navigation.navigate(Routes.TERMS_SCREEN);
   }
+
+  const { isSignedIn, toggleIsSignedIn } = useAuthContext();
+  
+  useEffect(() => {
+    console.log("isSignedIn a changé :", isSignedIn);
+  }, [isSignedIn]);
 
   //hide/show password
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
@@ -47,7 +53,7 @@ export default function LoginScreen( {navigation}: {navigation: any}) {
                       mode='outlined'
                       right={<TextInput.Icon icon={isPasswordVisible ? 'eye-off' : 'eye' } onPress={ ()=>{ setIsPasswordVisible((old) => !old )}}/>}
                     />
-                    <Button className='mt-10 bg-violet-600' mode="contained" onPress={() => console.log('Pressed')}>
+                    <Button className='mt-10 bg-violet-600' mode="contained" onPress={toggleIsSignedIn}>
                       Login
                     </Button>
                     <TouchableOpacity onPress={navigateToTerms}>
