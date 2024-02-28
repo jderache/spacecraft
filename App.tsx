@@ -1,5 +1,3 @@
-import react from 'react';
-import { useState } from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { NetworkProvider } from 'react-native-offline';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -21,7 +19,6 @@ function App() {
   );
 }
 
-// eslint-disable-next-line import/no-default-export
 export default App;
 
 // return Storybook's UI

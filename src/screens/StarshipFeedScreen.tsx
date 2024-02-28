@@ -2,23 +2,24 @@
 
 import React from "react";
 import { StyleSheet, StatusBar, View, Text, SafeAreaView, FlatList, TouchableOpacity} from "react-native";
-import { ActivityIndicator, Appbar, Button} from 'react-native-paper';
+import { ActivityIndicator } from 'react-native-paper';
 import { useStarships } from '../hooks/useStarships';
 import { StarshipCard } from "src/components/StarshipCard";
 import { Routes } from "../navigation/Routes";
-import {useAuthContext} from "../contexts/AuthContext";
 
-export const StarshipFeedScreen = ({navigation} : {navigation:any}) => {
+export const StarshipFeedScreen = ({navigation} : {navigation: any }) => {
   const { data, isLoading, isError, error } = useStarships();
-
-  const { isSignedIn, toggleIsSignedIn } = useAuthContext();
   
   return (
       <>
+        {/* Ancienne gestion de l'Appbar */}
+        {/* 
         <Appbar.Header>
-          <Appbar.BackAction onPress={toggleIsSignedIn} />
+          <Appbar.BackAction onPress={signOutAndGoBack} />
           <Appbar.Content title="Starships" />
         </Appbar.Header>
+        */}
+
         <SafeAreaView style={styles.container}>
           <StatusBar barStyle="dark-content" />
             {isError && !isLoading ? <Text>An error has occurred : {error.message}</Text> : null}

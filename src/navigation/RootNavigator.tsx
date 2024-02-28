@@ -4,20 +4,29 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {Routes} from "./Routes";
 import { StarshipFeedScreen } from "../screens/StarshipFeedScreen";
 import StarshipDetailsScreen from "../screens/StarshipDetailsScreen";
+import CustomNavigationBar from "../navigation/CustomNavigationBar";
+import { useAuthContext } from "../contexts/AuthContext";
+
 
 const Stack = createNativeStackNavigator();
 
+
 const RootNavigator = () => {
+    const { toggleIsSignedIn } = useAuthContext();
+
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName={Routes.STARSHIP_FEED_SCREEN}>
-                <Stack.Group screenOptions={{ headerShown: false }}>
+                <Stack.Navigator screenOptions={{
+                    header: (props) => <CustomNavigationBar {...props} />,
+                }} initialRouteName={Routes.STARSHIP_FEED_SCREEN}>
+                <Stack.Group>
                     <Stack.Screen
                         name={Routes.STARSHIP_FEED_SCREEN}
                         component={StarshipFeedScreen}
+                        options={{
+                            header: (props) => <CustomNavigationBar {...props} logout={toggleIsSignedIn} />,
+                        }}
                     />
-                </Stack.Group>
-                <Stack.Group screenOptions={{ headerShown: false }}>
                     <Stack.Screen
                         name={Routes.STARSHIP_DETAIL_SCREEN}
                         component={StarshipDetailsScreen}

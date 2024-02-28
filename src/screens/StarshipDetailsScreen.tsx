@@ -2,24 +2,25 @@ import React from "react";
 import { Text, StyleSheet, SafeAreaView, StatusBar, View, Image } from "react-native";
 import { Appbar } from "react-native-paper";
 import { useImage } from "../hooks/useImage";
+import { useEffect } from "react";
 
 type Props = {
   navigation: any,
   route: any
 }
 
-
 const StarshipDetailsScreen = ({ navigation, route }: Props) => {
-  function goBack() {
-    navigation.goBack();
-  }
+  
+  useEffect(() => {
+    navigation.setOptions({ title: route.params.name });
+}, []);
 
   return (
     <>
-    <Appbar.Header>
+    {/* <Appbar.Header>
       <Appbar.BackAction onPress={goBack} />
       <Appbar.Content title={route.params.name} />
-    </Appbar.Header>
+    </Appbar.Header> */}
     <SafeAreaView style={styles.container}>
       <View>
         <StatusBar barStyle="dark-content" />
