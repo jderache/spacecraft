@@ -42,6 +42,7 @@ export default function LoginScreen( {navigation}: {navigation: any}) {
                       theme={{ colors: { primary: 'black', }}}
                       keyboardType='email-address'
                       mode='outlined'
+                      autoCapitalize='none'
                     />
                     <TextInput className='mt-10'
                       label="Password"

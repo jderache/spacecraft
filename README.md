@@ -29,3 +29,9 @@ To get started with Spacecraft, follow these steps :
   ```
   npm run ios
   ```
+
+## Enjoy...✔️
+
+You should have something that looks like this :
+
+![Animated app screenshots](/assets/demo.gif)
